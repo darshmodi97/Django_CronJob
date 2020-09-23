@@ -28,6 +28,13 @@ Here I have created Django cronjob by using django-crontab
     CRONJOBS = [
       ('*/5 * * * *', 'myapp.cron.other_scheduled_job', ['arg1', 'arg2'], {'verbose': 0}),
       ('0   4 * * *', 'django.core.management.call_command', ['clearsessions']),
+       # format 1
+           ('0   0 1 * *', 'myapp.cron.my_scheduled_job', '>> /tmp/scheduled_job.log'),
+
+       # format 2
+            ('0   0 1 * *', 'myapp.cron.other_scheduled_job', ['myapp']),
+            ('0   0 * * 0', 'django.core.management.call_command', ['dumpdata', 'auth'], {'indent': 4}, '> /home/john/backups/last_sunday_auth_backup.json'),
+]
     ]
 
 7. Inally run this command to add all defined jobs from CRONJOBS to crontab (of the user which you are running this command with):
