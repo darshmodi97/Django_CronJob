@@ -16,7 +16,7 @@ Here I have created Django cronjob by using django-crontab
 4.
     def my_scheduled_job():
       pass    
-      # logic 
+      #.. logic ..
 
 5.  now add this to your settings.py:
     CRONJOBS = [
