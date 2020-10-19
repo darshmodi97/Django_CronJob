@@ -41,8 +41,8 @@ Here I have created Django cronjob by using django-crontab
 
       python manage.py crontab add
       
-      -> show current active jobs of this project:
+      - show current active jobs of this project:
           python manage.py crontab show
      
-      -> removing all defined jobs is straight forward:
+      - removing all defined jobs is straight forward:
           python manage.py crontab remove
